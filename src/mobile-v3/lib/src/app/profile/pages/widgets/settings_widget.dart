@@ -9,6 +9,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:flutter/foundation.dart';
+import 'package:airqo/src/app/profile/pages/languages/select_language_page.dart';
 
 class SettingsWidget extends StatefulWidget {
   const SettingsWidget({super.key});
@@ -211,38 +212,43 @@ void _showLogoutConfirmation() {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             SizedBox(height: screenHeight * 0.02),
+            SettingsTile(
+              iconPath: "assets/profile/settings.svg",
+              title: "Settings",
+              
+            ),
 
             SettingsTile(
               switchValue: _locationEnabled,
               iconPath: "assets/images/shared/location_icon.svg",
               title: "Location",
               onChanged: _toggleLocation,
-              description:
-                  "AirQo to use your precise location to locate the Air Quality of your nearest location",
+              //description:
+               //   "AirQo to use your precise location to locate the Air Quality of your nearest location",
             ),
 
             SizedBox(height: screenHeight * 0.02),
 
-            // SettingsTile(
-            //   iconPath: "assets/images/shared/language_icon.svg",
-            //   title: "Languages",
-            //   onTap: () {
-            //     Navigator.of(context).push(
-            //       MaterialPageRoute(
-            //         builder: (context) => SelectLanguagePage(),
-            //       ),
-            //     );
-            //   },
-            //   description:
-            //       "Change the language of the app to your preferred language",
-            // ),
+             SettingsTile(
+              iconPath: "assets/images/shared/language_icon.svg",
+               title: "Languages",
+               onTap: () {
+                 Navigator.of(context).push(
+                   MaterialPageRoute(
+                     builder: (context) => SelectLanguagePage(),
+                   ),
+                 );
+               },
+               //description:
+                 //  "Change the language of the app to your preferred language",
+             ),
 
                      // Add the developer option here, before the logout button
           if (kDebugMode)
             SettingsTile(
               iconPath: "assets/images/shared/feedback_icon.svg",
               title: "Test Slack Logger",
-              description: "Developer option to test Slack integration",
+             // description: "Developer option to test Slack integration",
               onTap: () {
                 Navigator.push(
                   context,

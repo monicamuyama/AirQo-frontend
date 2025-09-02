@@ -7,7 +7,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:airqo/src/app/shared/pages/error_page.dart';
 import 'package:loggy/loggy.dart';
-
+import 'package:airqo/src/app/other/language/services/app_localizations.dart';
 class ProfilePage extends StatefulWidget {
   const ProfilePage({super.key});
 
@@ -161,7 +161,9 @@ class _ProfilePageState extends State<ProfilePage> with UiLoggy {
                                                 ),
                                                 SizedBox(width: 8),
                                                 Text(
-                                                  "Edit your profile",
+                                                  AppLocalizations.of(context).translate('language.select_language'),
+                                                  //AppLocalizations.of(context).translate("auth.edit_profile"),
+                                                  //"Edit your profile",
                                                   style: TextStyle(
                                                     fontWeight: FontWeight.w500,
                                                     color: Colors.white,
@@ -181,26 +183,26 @@ class _ProfilePageState extends State<ProfilePage> with UiLoggy {
                         },
                       ),
                     ),
-                    SizedBox(height: 32),
-                    TabBar(
-                        indicatorSize: TabBarIndicatorSize.tab,
-                        labelColor:
-                            Theme.of(context).brightness == Brightness.dark
-                                ? Colors.white
-                                : AppColors.primaryColor,
-                        overlayColor:
-                            WidgetStatePropertyAll(Colors.transparent),
-                        indicatorColor:
-                            Theme.of(context).brightness == Brightness.dark
-                                ? Colors.white
-                                : AppColors.primaryColor,
-                        tabs: [
-                          Tab(
-                              height: 60,
-                              icon: TabIcon(
-                                  image: "assets/profile/settings.svg",
-                                  label: "Settings")),
-                        ]),
+                    //SizedBox(height: 32),
+                    //TabBar(
+                        //indicatorSize: TabBarIndicatorSize.tab,
+                        //labelColor:
+                           // Theme.of(context).brightness == Brightness.dark
+                              //  ? Colors.white
+                              //  : AppColors.primaryColor,
+                        //overlayColor:
+                           // WidgetStatePropertyAll(Colors.transparent),
+                       // indicatorColor:
+                            //Theme.of(context).brightness == Brightness.dark
+                               // ? Colors.white
+                               // : AppColors.primaryColor,
+                       // tabs: [
+                          //Tab(
+                            //  height: 60,
+                             // icon: TabIcon(
+                                 // image: "assets/profile/settings.svg",
+                                 // label: "Settings")),
+                       // ]),
                     Expanded(
                       child: TabBarView(children: [SettingsWidget()]),
                     )

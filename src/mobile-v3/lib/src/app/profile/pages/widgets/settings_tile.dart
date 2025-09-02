@@ -6,7 +6,7 @@ import 'package:flutter_svg/svg.dart';
 class SettingsTile extends StatelessWidget {
   final String title;
   bool? switchValue;
-  String? description;
+  //String? description;
   final String iconPath;
   final void Function(bool)? onChanged;
   final void Function()? onTap;
@@ -18,7 +18,7 @@ class SettingsTile extends StatelessWidget {
     this.switchValue,
     this.onChanged,
     this.onTap,
-    this.description
+    //this.description
   });
 
   @override
@@ -29,9 +29,9 @@ class SettingsTile extends StatelessWidget {
     final titleColor = isDarkMode 
         ? Colors.white 
         : AppColors.boldHeadlineColor4;
-    final descriptionColor = isDarkMode 
-        ? Colors.grey[400] 
-        : Theme.of(context).textTheme.headlineMedium?.color;
+    //final descriptionColor = isDarkMode 
+      //  ? Colors.grey[400] 
+        //: Theme.of(context).textTheme.headlineMedium?.color;
     final iconBgColor = Theme.of(context).highlightColor;
     final dividerColor = isDarkMode 
         ? Colors.grey[800] 
@@ -55,20 +55,20 @@ class SettingsTile extends StatelessWidget {
                     value: switchValue!,
                     onChanged: onChanged)
                 : null,
-            subtitle: description != null
-                ? Padding(
-                    padding: const EdgeInsets.only(top: 6.0),
-                    child: Text(
-                      description!,
-                      style: TextStyle(
-                        color: descriptionColor,
-                        fontSize: 14,
-                        fontWeight: FontWeight.w400,
-                        height: 1.4,
-                      ),
-                    ),
-                  )
-                : null,
+           // subtitle: description != null
+              //  ? Padding(
+                   // padding: const EdgeInsets.only(top: 6.0),
+                   // child: Text(
+                     // description!,
+                     // style: TextStyle(
+                       // color: descriptionColor,
+                        //fontSize: 14,
+                        //fontWeight: FontWeight.w400,
+                        //height: 1.4,
+                     // ),
+                    //),
+                //  )
+                //: null,
             leading: Container(
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
@@ -106,7 +106,7 @@ class SettingsTile extends StatelessWidget {
           ),
           Divider(
             color: dividerColor,
-            indent: 80,
+            indent: 10,
             thickness: isDarkMode ? 0.5 : 1.0,
           )
         ],
